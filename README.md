@@ -1,5 +1,6 @@
 # Task Monitoring
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2474cd13df914281ac66e473edfb4256)](https://app.codacy.com/manual/supanadit/xcidic-task-monitoring-backend?utm_source=github.com&utm_medium=referral&utm_content=supanadit/xcidic-task-monitoring-backend&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/supanadit/xcidic-task-monitoring-backend.svg?branch=master)](https://travis-ci.com/supanadit/xcidic-task-monitoring-backend)
 
 This is task monitoring backend for interview test from [XCIDIC](https://www.xcidic.com/), so basically i just split the project into two versions which is Backend version & Frontend version,
