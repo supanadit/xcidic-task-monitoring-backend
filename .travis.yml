@@ -3,6 +3,9 @@ language: node_js
 node_js:
   - "12"
 
+services:
+  - mysql
+
 addons:
   mariadb: '10.4'
 
@@ -17,5 +20,5 @@ install:
   - npx sequelize-cli db:migrate
   - npx sequelize-cli db:seed
 
-after_success:
+after_script:
   - bash <(curl -s https://codecov.io/bash)

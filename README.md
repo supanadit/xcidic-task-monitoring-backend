@@ -1,5 +1,7 @@
 # Task Monitoring
 
+[![Build Status](https://travis-ci.com/supanadit/xcidic-task-monitoring-backend.svg?branch=master)](https://travis-ci.com/supanadit/xcidic-task-monitoring-backend)
+
 This is task monitoring backend for interview test from [XCIDIC](https://www.xcidic.com/), so basically i just split the project into two versions which is Backend version & Frontend version,
 and this one is the backend version, the frontend version itself will be splatted into two versions which is the Angular version and ReactJS version, as i mentioned on the phone call that i am not familiar with ReactJS, instead i used Angular and Vue JS
 but of course i can do React JS if it supposed to be, but take time between 1 or 2 weeks before it ready to work with real project, so this project is a test for the interview, and the duration is no longer than a week, so i decided to write a two version of Frontend system,
