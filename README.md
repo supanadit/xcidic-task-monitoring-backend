@@ -13,8 +13,9 @@ and the Angular is the primary tool for the Frontend.
 - `npm install`
 - create a database called `task_monitoring` in MySQL or MariaDB
 - run migration with `npx sequelize-cli db:migrate`
-- `npm start`
-- Open in browser [http://localhost:3000](http://localhost:3000)
+- run seeder with `npx sequelize-cli db:seed`
+- run the app`npm start`
+- open in browser [http://localhost:3000](http://localhost:3000)
 
 ## Project Task
 1. Make a simple CRUD application for task monitoring, with (MongoDB/PostgreSQL/MySQL, ExpressJs, ReactJs and NodeJs).
