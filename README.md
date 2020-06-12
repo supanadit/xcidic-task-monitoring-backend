@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/supanadit/xcidic-task-monitoring-backend.svg?branch=master)](https://travis-ci.com/supanadit/xcidic-task-monitoring-backend)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/63871f6b7ba24a81b787b81fd236c8e8)](https://www.codacy.com/manual/supanadit/xcidic-task-monitoring-backend?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=supanadit/xcidic-task-monitoring-backend&amp;utm_campaign=Badge_Grade)
+[![CodeFactor](https://www.codefactor.io/repository/github/supanadit/xcidic-task-monitoring-backend/badge)](https://www.codefactor.io/repository/github/supanadit/xcidic-task-monitoring-backend)
 
 This is task monitoring backend for interview test from [XCIDIC](https://www.xcidic.com/), so basically i just split the project into two versions which is Backend version & Frontend version,
 and this one is the backend version, the frontend version itself will be splatted into two versions which is the Angular version and ReactJS version, as i mentioned on the phone call that i am not familiar with ReactJS, instead i used Angular and Vue JS
