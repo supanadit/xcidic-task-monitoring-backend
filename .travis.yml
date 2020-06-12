@@ -17,8 +17,6 @@ before_install:
 
 install:
   - npm install
-  - npx sequelize-cli db:migrate
-  - npx sequelize-cli db:seed
 
 after_script:
   - bash <(curl -s https://codecov.io/bash)
