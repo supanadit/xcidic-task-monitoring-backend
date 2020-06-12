@@ -10,7 +10,7 @@ and the Angular is the primary tool for the Frontend.
 2. MariaDB 10.4.13+
 
 ## Quickstart
-- `npm install`
+- run installation `npm install`
 - create a database called `task_monitoring` in MySQL or MariaDB
 - run migration with `npx sequelize-cli db:migrate`
 - run seeder with `npx sequelize-cli db:seed`
