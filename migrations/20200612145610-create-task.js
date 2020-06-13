@@ -26,7 +26,7 @@ module.exports = {
             createdAt: {
                 type: Sequelize.DATE
             },
-            updateAt: {
+            updatedAt: {
                 type: Sequelize.DATE
             }
         }).then(() => queryInterface.addConstraint("Tasks", [ "created_by" ], {

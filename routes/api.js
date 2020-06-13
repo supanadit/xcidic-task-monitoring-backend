@@ -103,6 +103,38 @@ router.group("/", (router) => {
             });
         });
     });
+
+    // Kelompok endpoint untuk manipulasi data dari tabel task
+    router.group("/task", (router) => {
+        router.get("/", function (req, res, next) {
+            db.Task.findAll().then(task => {
+                return res.send(task);
+            });
+        });
+        router.post("/", function (req, res, next) {
+            const body = req.body;
+            db.Task.create(body).then((task) => {
+                return res.send({ message: `Success create a task with title ${ task.title }` });
+            });
+        });
+        router.put("/:taskId", function (req, res, next) {
+            const body = req.body;
+
+            db.Task.update(body, {
+                where: {
+                    id: req.params.taskId,
+                }
+            }).then(() => {
+                return res.send({ message: `Success edit a task with title ${ body.title }` });
+            });
+        });
+        router.delete("/:taskId", function (req, res, next) {
+            db.Task.findByPk(req.params.taskId).then(task => {
+                task.destroy();
+                return res.send({ message: `Success delete a task with title ${ task.title }` });
+            });
+        });
+    });
 });
 
 module.exports = router;
