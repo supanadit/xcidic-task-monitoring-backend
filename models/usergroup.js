@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-    const UserGroup = sequelize.define('UserGroup', {
+    const UserGroup = sequelize.define("UserGroup", {
         name: DataTypes.STRING,
         can_create_task: DataTypes.BOOLEAN,
         can_edit_task: DataTypes.BOOLEAN,
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
         can_edit_user_group: DataTypes.BOOLEAN,
         can_delete_user_group: DataTypes.BOOLEAN
     }, {
-        tableName: 'UserGroups',
+        tableName: "UserGroups",
     });
     UserGroup.associate = function (models) {
         // associations can be defined here

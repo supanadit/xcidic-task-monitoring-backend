@@ -16,8 +16,9 @@ and the Angular is the primary tool for the Frontend.
 ## Quickstart
 - run installation `npm install`
 - create a database called `task_monitoring` in MySQL or MariaDB
+- set database configuration such as username, password, host and database port at `config/config.json`
 - run migration with `npx sequelize-cli db:migrate`
-- run seeder with `npx sequelize-cli db:seed`
+- run seeder with `npx sequelize-cli db:seed:all`
 - run the app`npm start`
 - open in browser [http://localhost:3000](http://localhost:3000)
 

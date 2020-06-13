@@ -1,10 +1,10 @@
-'use strict';
+"use strict";
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.bulkInsert('UserGroups', [
+        return queryInterface.bulkInsert("UserGroups", [
             {
-                name: 'Manager',
+                name: "Manager",
                 can_create_task: true,
                 can_edit_task: true,
                 can_delete_task: true,
@@ -14,7 +14,7 @@ module.exports = {
                 can_delete_user_group: true,
             },
             {
-                name: 'Employee',
+                name: "Employee",
                 can_create_task: true,
                 can_edit_task: true,
                 can_delete_task: true,
@@ -27,6 +27,6 @@ module.exports = {
     },
 
     down: (queryInterface, Sequelize) => {
-        return queryInterface.bulkDelete('UserGroups', null, {});
+        return queryInterface.bulkDelete("UserGroups", null, {});
     }
 };
