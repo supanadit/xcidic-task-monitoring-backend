@@ -15,17 +15,33 @@ and the Angular is the primary tool for the Frontend.
 
 ## Quickstart
 - run installation `npm install`
+
+
 - create a database called `task_monitoring` in MySQL or MariaDB
+
+
 - set database configuration such as username, password, host and database port at `config/config.json`
+
+
 - run migration with `npx sequelize-cli db:migrate`
+
+
 - run seeder with `npx sequelize-cli db:seed:all`
+
+
 - run the app`npm start`
+
+
 - open in browser [http://localhost:3000](http://localhost:3000)
+
 
 ## Project Task
 1. Make a simple CRUD application for task monitoring, with (MongoDB/PostgreSQL/MySQL, ExpressJs, ReactJs and NodeJs).
+
 2. This application is used by TWO USER GROUPS: employee & manager.  Each user according to their respective user group can login & do the following;
+
 3. Employee: can add, edit & delete the daily task.
+
 4. Manager: can see all employee daily task(s).
 
 ## Duration
@@ -36,18 +52,28 @@ You can adjust the business process as you like as you are the project owner.
 
 ## Scoring Points
 1. You able to use react
+
 2. Your business process design and analytics
+
 3. Your database schema modeling
+
 4. Your code style
+
 5. Your design on application
+
 6. You are required to mention all the documentation in this project and give a rough outline of them.
 
 ## Additional Points
 1. Sent the test result early
+
 2. The result saved to the Version Control System (Github, bitbucket, tfs, etc)
+
 3. The result is deployed on Cloud  (Bluemix, heroku, openshift, gcp, etc)
+
 4. Using additional NPM/Bower package.
+
 5. Performance page load under 2sec
+
 6. Use automated deployment and automated testing process (Travis, Jenkins, codeship, etc)
 
 ## Contributor
