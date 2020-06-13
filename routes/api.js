@@ -20,6 +20,7 @@ router.group("/", (router) => {
     }), function (err, req, res, next) {
         if (err.name === "UnauthorizedError") {
             res.status(401).send({ message: "Unauthorized" });
+            next();
         }
     });
 
@@ -30,11 +31,14 @@ router.group("/", (router) => {
             if (user != null) {
                 if (crypt.compareSync(body.password, user.password)) {
                     res.json({ message: "success", token: jwt.sign(body, secretKey) });
+                    next();
                 } else {
                     res.status(401).send({ message: "username or password is invalid" });
+                    next();
                 }
             } else {
                 res.status(401).send({ message: "username or password is invalid" });
+                next();
             }
         });
     });
@@ -43,13 +47,15 @@ router.group("/", (router) => {
     router.group("/user/group", (router) => {
         router.get("/", function (req, res, next) {
             db.UserGroup.findAll().then(usergroup => {
-                return res.send(usergroup);
+                res.send(usergroup);
+                next();
             });
         });
         router.post("/", function (req, res, next) {
             const body = req.body;
             db.UserGroup.create(body).then((usergroup) => {
-                return res.send({ message: `Success create a user group with name ${ usergroup.name }` });
+                res.send({ message: `Success create a user group with name ${ usergroup.name }` });
+                next();
             });
         });
         router.put("/:userGroupId", function (req, res, next) {
@@ -60,13 +66,15 @@ router.group("/", (router) => {
                     id: req.params.userGroupId,
                 }
             }).then(() => {
-                return res.send({ message: `Success edit a user group with name ${ body.name }` });
+                res.send({ message: `Success edit a user group with name ${ body.name }` });
+                next();
             });
         });
         router.delete("/:userGroupId", function (req, res, next) {
             db.UserGroup.findByPk(req.params.userGroupId).then(usergroup => {
                 usergroup.destroy();
-                return res.send({ message: `Success delete a user group with name ${ usergroup.name }` });
+                res.send({ message: `Success delete a user group with name ${ usergroup.name }` });
+                next();
             });
         });
     });
@@ -75,13 +83,15 @@ router.group("/", (router) => {
     router.group("/user", (router) => {
         router.get("/", function (req, res, next) {
             db.User.findAll().then(user => {
-                return res.send(user);
+                res.send(user);
+                next();
             });
         });
         router.post("/", function (req, res, next) {
             const body = req.body;
             db.User.create(body).then((user) => {
-                return res.send({ message: `Success create a user with name ${ user.name }` });
+                res.send({ message: `Success create a user with name ${ user.name }` });
+                next();
             });
         });
         router.put("/:userId", function (req, res, next) {
@@ -93,13 +103,15 @@ router.group("/", (router) => {
                     id: req.params.userId,
                 }
             }).then(() => {
-                return res.send({ message: `Success edit a user with name ${ body.name }` });
+                res.send({ message: `Success edit a user with name ${ body.name }` });
+                next();
             });
         });
         router.delete("/:userId", function (req, res, next) {
             db.User.findByPk(req.params.userId).then(user => {
                 user.destroy();
-                return res.send({ message: `Success delete a user with name ${ user.name }` });
+                res.send({ message: `Success delete a user with name ${ user.name }` });
+                next();
             });
         });
     });
@@ -108,13 +120,15 @@ router.group("/", (router) => {
     router.group("/task", (router) => {
         router.get("/", function (req, res, next) {
             db.Task.findAll().then(task => {
-                return res.send(task);
+                res.send(task);
+                next();
             });
         });
         router.post("/", function (req, res, next) {
             const body = req.body;
             db.Task.create(body).then((task) => {
-                return res.send({ message: `Success create a task with title ${ task.title }` });
+                res.send({ message: `Success create a task with title ${ task.title }` });
+                next();
             });
         });
         router.put("/:taskId", function (req, res, next) {
@@ -125,13 +139,15 @@ router.group("/", (router) => {
                     id: req.params.taskId,
                 }
             }).then(() => {
-                return res.send({ message: `Success edit a task with title ${ body.title }` });
+                res.send({ message: `Success edit a task with title ${ body.title }` });
+                next();
             });
         });
         router.delete("/:taskId", function (req, res, next) {
             db.Task.findByPk(req.params.taskId).then(task => {
                 task.destroy();
-                return res.send({ message: `Success delete a task with title ${ task.title }` });
+                res.send({ message: `Success delete a task with title ${ task.title }` });
+                next();
             });
         });
     });
