@@ -39,6 +39,38 @@ router.group("/", (router) => {
         });
     });
 
+    // Kelompok endpoint untuk manipulasi data user group
+    router.group("/user/group", (router) => {
+        router.get("/", function (req, res, next) {
+            db.UserGroup.findAll().then(usergroup => {
+                return res.send(usergroup);
+            });
+        });
+        router.post("/", function (req, res, next) {
+            const body = req.body;
+            db.UserGroup.create(body).then((usergroup) => {
+                return res.send({ message: `Success create a user group with name ${ usergroup.name }` });
+            });
+        });
+        router.put("/:userGroupId", function (req, res, next) {
+            const body = req.body;
+
+            db.UserGroup.update(body, {
+                where: {
+                    id: req.params.userGroupId,
+                }
+            }).then(() => {
+                return res.send({ message: `Success edit a user group with name ${ body.name }` });
+            });
+        });
+        router.delete("/:userGroupId", function (req, res, next) {
+            db.UserGroup.findByPk(req.params.userGroupId).then(usergroup => {
+                usergroup.destroy();
+                return res.send({ message: `Success delete a user group with name ${ usergroup.name }` });
+            });
+        });
+    });
+
     // Kelompok endpoint untuk manipulasi data user
     router.group("/user", (router) => {
         router.get("/", function (req, res, next) {
